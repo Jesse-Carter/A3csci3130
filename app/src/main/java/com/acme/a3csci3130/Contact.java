@@ -14,26 +14,44 @@ import java.util.Map;
 
 public class Contact implements Serializable {
 
-    public  String uid;
+    public  String bid;
     public  String name;
-    public  String email;
+    public  String primaryBiz;
+    public  String address;
+    public  String location;
+    public  String uid;
 
     public Contact() {
         // Default constructor required for calls to DataSnapshot.getValue
     }
 
-    public Contact(String uid, String name, String email){
+    /**
+     *
+     * @param uid (Firebase Reference ID)
+     * @param bid (Business ID)
+     * @param name
+     * @param primaryBiz
+     * @param address
+     * @param location
+     */
+    public Contact(String uid, String bid, String name, String primaryBiz, String address, String location){
         this.uid = uid;
+        this.bid = bid;
         this.name = name;
-        this.email = email;
+        this.primaryBiz = primaryBiz.toUpperCase();
+        this.address = address;
+        this.location = location.toUpperCase();
     }
 
-    @Exclude
+
     public Map<String, Object> toMap(){
         HashMap<String, Object> result = new HashMap<>();
         result.put("uid", uid);
+        result.put("bid", bid);
         result.put("name", name);
-        result.put("email", email);
+        result.put("primaryBiz", primaryBiz);
+        result.put("address", address);
+        result.put("location", location);
 
         return result;
     }
