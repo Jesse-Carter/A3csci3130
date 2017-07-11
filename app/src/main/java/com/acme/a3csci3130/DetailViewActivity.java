@@ -14,7 +14,9 @@ public class DetailViewActivity extends Activity {
     Contact receivedPersonInfo;
     private MyApplicationData appState;
 
-
+    /**
+     * Displays the currently selected Business's information
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,6 +67,10 @@ public class DetailViewActivity extends Activity {
         startActivity(intent);
     }
 
+    /**
+     * Erases the current entry
+     * @param v
+     */
     public void eraseContact(View v)
     {
         appState.firebaseReference.child(receivedPersonInfo.uid).removeValue();

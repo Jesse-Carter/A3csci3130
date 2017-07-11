@@ -8,10 +8,14 @@ import android.widget.EditText;
 
 public class CreateContactAcitivity extends Activity {
 
+
     private Button submitButton;
     private EditText nameField, primaryBizField, addressField, locationField,bidField;
     private MyApplicationData appState;
 
+    /**
+     * Sets the widgets to their corresponding widgets in the UI
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -29,10 +29,10 @@ public class Contact implements Serializable {
      *
      * @param uid (Firebase Reference ID)
      * @param bid (Business ID)
-     * @param name
-     * @param primaryBiz
-     * @param address
-     * @param location
+     * @param name (Name of Business)
+     * @param primaryBiz (Type of Business)
+     * @param address (Address)
+     * @param location (Province)
      */
     public Contact(String uid, String bid, String name, String primaryBiz, String address, String location){
         this.uid = uid;
@@ -43,7 +43,10 @@ public class Contact implements Serializable {
         this.location = location.toUpperCase();
     }
 
-
+    /**
+     * Used to send the object to firebase
+     * @return result which is what is passed into firebase
+     */
     public Map<String, Object> toMap(){
         HashMap<String, Object> result = new HashMap<>();
         result.put("uid", uid);
